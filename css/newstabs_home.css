@@ -4,6 +4,15 @@
     margin: inherit;
         }
 
-md-tabs{
-    height:100%;
+md-tabs {
+    height:87%;
+}
+
+md-sidenav{
+    
+}
+
+.grey {
+  background-color: #D3D3D3;
+  cursor:pointer;
 }
