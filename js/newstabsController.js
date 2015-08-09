@@ -4,43 +4,54 @@ app.controller('newstabsController', ['$scope', '$mdSidenav', function($scope, $
     $mdSidenav(menuId).toggle();
   };
 
-  $scope.userIcon = 'img/icons/ic_account_circle.svg';
-  $scope.userName = "Sathvik Shivaprakash";
 
 }]);
 
-app.controller('newstabsController2', function($scope, $http,$window) {
+app.controller('newstabsController2', function($scope, $http, $window) {
+
+  var loggedIn = false;
+
+  if (loggedIn) {
+    $scope.userIcon = 'img/icons/ic_account_circle.svg';
+    $scope.userName = "Sathvik";
+  }
+  else {
+    $scope.userIcon = 'img/icons/ic_account_circle.svg';
+    $scope.userName = "Not logged in";
+  }
 
   $scope.showDescription = true;
+  
+  var baseUrl = "https://newstabs-sathvik1709.c9.io/php/tryrss.php?rssurl=";
 
   var tabs = [{
     title: 'NPR Headlines',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://www.npr.org/rss/rss.php?id=1001",
+    url: baseUrl + "http://www.npr.org/rss/rss.php?id=1001",
     content: "",
     showProgress: true
   }, {
     title: 'NPR Business',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://www.npr.org/rss/rss.php?id=1006",
+    url: baseUrl + "http://www.npr.org/rss/rss.php?id=1006",
     content: "",
     showProgress: true
   }, {
     title: 'NPR Health',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://www.npr.org/rss/rss.php?id=1007",
+    url:baseUrl + "http://www.npr.org/rss/rss.php?id=1007",
     content: "",
     showProgress: true
   }, {
     title: 'NPR Politics',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://www.npr.org/rss/rss.php?id=1012",
+    url: baseUrl + "http://www.npr.org/rss/rss.php?id=1012",
     content: "",
     showProgress: true
   }, {
-    title: 'NPR World News',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://www.npr.org/rss/rss.php?id=1004",
+    title: 'ABC Tech',
+    url: baseUrl + "http://feeds.abcnews.com/abcnews/technologyheadlines",
     content: "",
     showProgress: true
   }, {
-    title: 'TOI Top stories',
-    url: "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=" + "http://dynamic.feedsportal.com/pf/555218/http://toi.timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    title: 'TOI Top storiess',
+    url: baseUrl + "http://dynamic.feedsportal.com/pf/555218/http://toi.timesofindia.indiatimes.com/rssfeedstopstories.cms",
     content: "",
     showProgress: true
   }];
@@ -54,9 +65,9 @@ app.controller('newstabsController2', function($scope, $http,$window) {
         value.showProgress = false;
       });
   });
-  
-  $scope.openTab = function (url) {
-    $window.open(url,'_blank');
+
+  $scope.openTab = function(url) {
+    $window.open(url, '_blank');
   };
 
 
