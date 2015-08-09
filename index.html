@@ -1,7 +1,8 @@
 <html lang="en" ng-app="newstabsApp">
 
 <head>
-
+    <title>NewsTabs</title>
+    <link rel="icon" type="image/png" href="img/icons/newstabs.png">
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -12,14 +13,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
 
-
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
     <meta name="viewport" content="initial-scale=1" />
 </head>
 
-<body layout="column">
-    <md-toolbar layout="row" ng-controller="newstabsController">
+<body>
+    <div layout="column" ng-controller="newstabsController">
+    <md-toolbar layout="row">
         <div class="md-toolbar-tools">
             <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
                 <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
@@ -27,16 +28,17 @@
             <h1>NewsTabs</h1>
         </div>
     </md-toolbar>
-    <div layout="row" flex ng-controller="newstabsController2">
+    <div layout="row" flex>
         <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
             <div flex layout="column">
                 <img layout-padding layout-align="end center" ng-src="{{userIcon}}" class="md-avatar" />
                 <div layout="row" layout-align="center center">
                     <h3>{{userName}}</h3></div>
-                <h2 class="md-title" layout-padding>Settings</h2>
+                 <md-subheader class="md-primary">Settings</md-subheader>
                 <md-divider></md-divider>
                 <div layout="column" layout-align="center center">
                     <md-checkbox ng-model="showDescription">Show Description</md-checkbox>
+                    <md-button md-no-ink class="md-primary">Search</md-button>
                 </div>
             </div>
         </md-sidenav>
@@ -59,15 +61,11 @@
         </md-content>
     </div>
 
-    <!-- Angular Material Dependencies -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.10.0/angular-material.min.js"></script>
+    <!-- JS and CSS -->
     <script src="js/newstabsApp.js"></script>
     <script src="js/newstabsController.js"></script>
     <link rel="stylesheet" href="css/newstabs_home.css" type="text/css" />
+    </div>
 </body>
 
 </html>

@@ -1,14 +1,9 @@
-app.controller('newstabsController', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+app.controller('newstabsController', ['$scope','$http', '$mdSidenav', function($scope,$http, $window, $mdSidenav ) {
 
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
-
-
-}]);
-
-app.controller('newstabsController2', function($scope, $http, $window) {
-
+  
   var loggedIn = false;
 
   if (loggedIn) {
@@ -70,5 +65,11 @@ app.controller('newstabsController2', function($scope, $http, $window) {
     $window.open(url, '_blank');
   };
 
+}]);
 
-});
+/*app.controller('newstabsController2', function($scope, $http, $window) {
+
+  
+
+
+});*/
