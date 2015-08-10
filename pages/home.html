@@ -1,0 +1,44 @@
+<div layout="column" ng-controller="newstabsController">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+                <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+            </md-button>
+            <h1>NewsTabs</h1>
+        </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <div flex layout="column">
+                <img layout-padding layout-align="end center" ng-src="{{userIcon}}" class="md-avatar" />
+                <div layout="row" layout-align="center center">
+                    <h3>{{userName}}</h3></div>
+                <md-subheader class="md-primary">Settings</md-subheader>
+                <md-divider></md-divider>
+                <div layout="column" layout-align="center center">
+                    <md-checkbox ng-model="showDescription">Show Description</md-checkbox>
+                    <a href="https://newstabs-sathvik1709.c9.io/#/search">
+                        <md-button md-no-ink class="md-primary">Search</md-button>
+                    </a>
+                </div>
+            </div>
+        </md-sidenav>
+        <md-content id="content" flex>
+            <md-tabs md-stretch-tabs="auto">
+                <md-tab ng-repeat="tab in tabs" ng-disabled="tab.disabled" label="{{tab.title}}">
+                    <md-progress-linear md-mode="indeterminate" ng-show="tab.showProgress"></md-progress-linear>
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="item in tab.content.channel.item" ng-click="openTab(item.link)">
+                            <div class="md-list-item-text">
+                                <h3>{{item.title}}</h3>
+                                <!--<p ng-show="showDescription">{{item.description}}</p>-->
+                                <p ng-show="showDescription">{{item.description}}</p>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-list>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+</div>

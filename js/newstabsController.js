@@ -1,4 +1,4 @@
-app.controller('newstabsController', ['$scope','$http', '$mdSidenav', function($scope,$http, $window, $mdSidenav ) {
+app.controller('newstabsController', ['$scope','$http', '$window','$mdSidenav', function($scope,$http, $window, $mdSidenav ) {
 
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
@@ -15,6 +15,8 @@ app.controller('newstabsController', ['$scope','$http', '$mdSidenav', function($
     $scope.userName = "Not logged in";
   }
 
+
+  // User settings
   $scope.showDescription = true;
   
   var baseUrl = "https://newstabs-sathvik1709.c9.io/php/tryrss.php?rssurl=";
@@ -66,10 +68,3 @@ app.controller('newstabsController', ['$scope','$http', '$mdSidenav', function($
   };
 
 }]);
-
-/*app.controller('newstabsController2', function($scope, $http, $window) {
-
-  
-
-
-});*/
