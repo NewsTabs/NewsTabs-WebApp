@@ -4,6 +4,7 @@ app.controller('newstabsController', ['$scope','$http', '$window','$mdSidenav', 
     $mdSidenav(menuId).toggle();
   };
   
+  
   var loggedIn = false;
 
   if (loggedIn) {
@@ -19,7 +20,7 @@ app.controller('newstabsController', ['$scope','$http', '$window','$mdSidenav', 
   // User settings
   $scope.showDescription = true;
   
-  var baseUrl = "https://newstabs-sathvik1709.c9.io/php/tryrss.php?rssurl=";
+  var baseUrl = "https://newstabs-sathvik1709.c9.io/php/getrss.php?rssurl=";
 
   var tabs = [{
     title: 'NPR Headlines',
@@ -42,13 +43,13 @@ app.controller('newstabsController', ['$scope','$http', '$window','$mdSidenav', 
     content: "",
     showProgress: true
   }, {
-    title: 'ABC Tech',
-    url: baseUrl + "http://feeds.abcnews.com/abcnews/technologyheadlines",
+    title: 'sam',
+    url: baseUrl + "http://www.feedforall.com/sample.xml",
     content: "",
     showProgress: true
   }, {
-    title: 'TOI Top storiess',
-    url: baseUrl + "http://dynamic.feedsportal.com/pf/555218/http://toi.timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    title: 'ABC Top storiess',
+    url: baseUrl + "http://feeds.abcnews.com/abcnews/topstories",
     content: "",
     showProgress: true
   }];

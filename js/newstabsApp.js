@@ -2,16 +2,15 @@ var app = angular.module('newstabsApp', ['ngRoute', 'ngMaterial']);
 
 
 app.config(function($routeProvider) {
+
     $routeProvider
-
-        .when('/search', {
-        templateUrl: 'pages/search.html',
-        controller: 'newstabsSearchController'
-    })
-
-    .when('/', {
+        .when('/', {
         templateUrl: 'pages/home.html',
         controller: 'newstabsController'
+    })
+    .when('/search', {
+        templateUrl: 'pages/search.html',
+        controller: 'newstabsSearchController'
     });
 
 });
